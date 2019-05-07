@@ -1,28 +1,15 @@
-# A Java/Maven/JUnit HelloWorld example
+# simple-java-maven-app
 
-A „Hello World!” sample written in Java using Maven for the build, that showcases a few very simple tests.
+This repository is for the
+[Build a Java app with Maven](https://jenkins.io/doc/tutorials/build-a-java-app-with-maven/)
+tutorial in the [Jenkins User Documentation](https://jenkins.io/doc/).
 
-This example demonstrates:
+The repository contains a simple Java application which outputs the string
+"Hello world!" and is accompanied by a couple of unit tests to check that the
+main application works as expected. The results of these tests are saved to a
+JUnit XML report.
 
-* A simple Java 8 application with tests
-* Unit tests written with [JUnit 5](https://junit.org/junit5/)
-* Integration tests written with [JUnit 5](https://junit.org/junit5/)
-* Code coverage reports via [JaCoCo](https://www.jacoco.org/jacoco/)
-* A Maven build that puts it all together
-
-## Running the tests
-
-* To run the unit tests, call `mvn test`
-* To run the integration tests as well, call `mvn verify`
-* Code coverage reports are generated when `mvn verify` (or a full `mvn clean install`) is called.
-  Point a browser at the output in `target/site/jacoco-both/index.html` to see the report.
-
-## Conventions
-
-This example follows the following basic conventions:
-
-| | unit test | integration test |
-| --- | --- | --- |
-| **resides in:** | `src/test/java/*Test.java` | `src/test/java/*IT.java` |
-| **executes in Maven phase:** | test | verify |
-| **handled by Maven plugin:** | [surefire](http://maven.apache.org/surefire/maven-surefire-plugin/) | [failsafe](http://maven.apache.org/surefire/maven-failsafe-plugin/) |
+The `jenkins` directory contains an example of the `Jenkinsfile` (i.e. Pipeline)
+you'll be creating yourself during the tutorial and the `scripts` subdirectory
+contains a shell script with commands that are executed when Jenkins processes
+the "Deliver" stage of your Pipeline.
